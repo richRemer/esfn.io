@@ -1,0 +1,15 @@
+{
+  "name": "esfn.io",
+  "version": "0.0.1",
+  "description": "esfn.io website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richRemer/esfn.io.git"
+  },
+  "author": "Richard Remer <reanjr@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richRemer/esfn.io/issues"
+  },
+  "homepage": "https://github.com/richRemer/esfn.io#readme"
+}
