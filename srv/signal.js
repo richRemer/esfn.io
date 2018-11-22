@@ -79,7 +79,7 @@ function trigger(model) {
 function disconnect(signal) {
     const {model, handler} = signals.get(signal);
 
-    handlers.get(model).remove(handler);
+    handlers.get(model).delete(handler);
 
     if (handlers.get(model).size === 0) {
         handlers.delete(model);
