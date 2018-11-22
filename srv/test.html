@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Unit Tests</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css">
+    </head>
+    <body>
+        <div id="mocha"></div>
+
+        <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js" crossorigin="anonymous"></script>
+
+        <script>
+            mocha.setup("bdd");
+        </script>
+
+        <script src="test/test-signal.js" type="module"></script>
+
+        <script type="module">
+            mocha.checkLeaks();
+            mocha.run();
+        </script>
+    </body>
+</html>
