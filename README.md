@@ -4,5 +4,5 @@ used by anybody.
 Available Functions
 ===================
 
- * [signal](signal.md)
- * [valueOf](value-of.md)
+ * [signal](srv/signal.md)
+ * [valueOf](srv/value-of.md)
