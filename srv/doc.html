@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Documentation - esfn.io</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>esfn.io</h1>
+            <h2>function library documentation</h2>
+
+            <nav id="toc">
+                <a href="#signal">signal</a>
+            </nav>
+        </header>
+
+        <main id="doc"></main>
+
+        <script>
+            const toc = document.getElementById("toc");
+            const doc = document.getElementById("doc");
+
+            window.addEventListener("hashchange", () => {
+                const hash = window.location.hash.slice(1);
+                const url = `${hash}.md`;
+
+                if (!hash) {
+                    doc.innerHTML = "";
+                    return;
+                }
+
+                fetch(url).then(res => res.text()).then(markdown => {
+                    doc.innerHTML = marked(markdown);
+                });
+            });
+        </script>
+    </body>
+</html>
