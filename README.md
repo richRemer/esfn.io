@@ -4,5 +4,5 @@ used by anybody.
 Available Functions
 ===================
 
+ * [clean](srv/clean.md)
  * [signal](srv/signal.md)
- * [valueOf](srv/value-of.md)
