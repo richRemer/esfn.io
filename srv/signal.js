@@ -1,8 +1,6 @@
 // © 2018 Richard Remer
 // Use is permitted under the MIT license. See LICENSE file.
 
-import valueOf from "./value-of.js";
-
 export const RATE_DEFAULT = 100;
 
 const {min} = Math;
@@ -112,4 +110,32 @@ function signalLoop() {
     }
 
     setTimeout(signalLoop, 0);
+}
+
+/**
+ * Evaluate by recursively calling .valueOf and return the final value.
+ * @param {*} value
+ */
+function valueOf(value) {
+    const cycled = new Set();
+
+    while (hasValue(value) & !cycled.has(value)) {
+        cycled.add(value);
+        value = value.valueOf();
+    }
+
+    return value;
+}
+
+/**
+ * Return true if the value can be further evaluated with .valueOf.
+ * @param {*} value
+ * @returns {boolean}
+ */
+function hasValue(value) {
+    return Boolean(
+        Object.prototype.isPrototypeOf(value)
+        && typeof value.valueOf === "function"
+        && value.valueOf !== Object.prototype.valueOf
+    );
 }
