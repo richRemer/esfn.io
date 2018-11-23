@@ -11,6 +11,7 @@ with `setInterval`, *etc.*), associate a cleanup function which knows how to
 disconnect, destroy, or otherwise cleanup the resource to the object for which
 the resource was created.  Later – when you are done with the object – the
 cleanups can be triggered without knowing the details.
+
 Importing
 ---------
 Importing the `clean` function should be performed by its canonical public URL.
